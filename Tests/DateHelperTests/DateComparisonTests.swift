@@ -146,6 +146,7 @@ final class DateHelperComparisonTests: XCTestCase {
         }
         XCTAssertTrue(!future.compare(.isEarlier(than: now)))
         XCTAssertTrue(past.compare(.isEarlier(than: now)))
+        XCTAssertFalse(now.compare(.isEarlier(than: now)))
     }
     // .isLaterThan
     func testDateLaterThanComparison() throws {
@@ -155,6 +156,7 @@ final class DateHelperComparisonTests: XCTestCase {
         }
         XCTAssertTrue(future.compare(.isLater(than: now)))
         XCTAssertTrue(!past.compare(.isLater(than: now)))
+        XCTAssertFalse(now.compare(.isLater(than: now)))
     }
     // .isWeekend
     func testDateIsWeekendComparison() throws {
